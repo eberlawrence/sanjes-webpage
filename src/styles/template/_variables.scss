@@ -1,0 +1,80 @@
+// theme
+$theme-color: #1c273c;
+
+// Brand Colors
+$color-brand-03: #ffe100d2;
+$color-brand-01: #c7b200;
+$color-brand-02: #918300;
+
+// Inverse Colorssd
+$color-inverse-01: #001737;
+$color-inverse-02: #1b2e4b;
+
+// Text Colors
+$color-text-01: $color-inverse-01;
+$color-text-02: $color-inverse-02;
+$color-text-03: #8392a5;
+$color-text-04: #c0ccda;
+
+// UI Colors
+$color-ui-01: #f5f6fa;
+$color-ui-02: #e5e9f2;
+$color-ui-03: #c0ccda;
+$color-ui-04: #8392a5;
+
+// Gray scale
+$white: #fff;
+$gray-50: #fafbfc;
+$gray-100: #f4f5f8;
+$gray-200: #e3e7ed;
+$gray-300: #cdd4e0;
+$gray-400: #b4bdce;
+$gray-500: #97a3b9;
+$gray-600: #7987a1;
+$gray-700: #596882;
+$gray-800: #3b4863;
+$gray-900: #1c273c;
+
+// Height
+$height-base: 38px;
+$height-header: 60px;
+$height-header-mobile: 55px;
+$height-footer: 46px;
+
+// Width
+$width-sidebar: 240px;
+
+// Marker
+$marker-icon-size: 16px;
+
+// Fonts
+$font-family-roboto: "Roboto", sans-serif;
+$font-family-interui: "Inter UI", sans-serif;
+$font-family-lato: "Lato", sans-serif;
+$font-family-rubik: "Rubik", sans-serif;
+$font-family-system: -apple-system, BlinkMacSystemFont, "Inter UI", Roboto, sans-serif;
+
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$border-input-color: $color-inverse-01;
+$border-input-color-focus: $color-brand-01;
+$box-shadow-dimensions: 0 0 0 0.2rem;
+$box-shadow-color: rgba(255, 227, 0, 0.25);
+$color-focus: #495057;
+
+/**
+ * Multi-select Input
+ */
+$background-color-disabled: #e9ecef;
+$border-color-focus-invalid: #dc3545;
+$border-color-focus-valid: #28a745;
+$box-shadow-color-invalid: rgba(220, 53, 69, 0.25);
+$box-shadow-color-valid: rgba(40, 167, 69, 0.25);
+$color-focus: #495057;
+$placeholder-color: #6c757d;
+$token-background-color: #e7f4ff;
+$token-disabled-background-color: rgba(0, 0, 0, 0.1);
+$token-disabled-color: #495057;
+$token-active-color: #fff;

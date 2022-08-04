@@ -1,0 +1,435 @@
+// Variables
+@import "./template/variables";
+@import "./template/bootstrap/variables";
+
+// Mixins
+@import "./template/mixins";
+@import "./template/bootstrap/mixins";
+
+// Bootsrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+.min-width-buttons {
+  min-width: 117px;
+  button {
+    min-width: 117px;
+  }
+}
+
+.react-custom-scrollbars {
+  position: relative;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-radius: inherit;
+  background-color: rgba($color-brand-01, 0.9);
+  transform: translateY(0px);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-pointer-disabled {
+  pointer-events: none;
+}
+
+.form-error {
+  display: block;
+  color: #c53030;
+  margin-top: 8px;
+}
+
+.aule-form-content-body {
+  position: relative;
+  padding: 15px;
+  height: calc(100% - #{$height-header - 6px});
+  overflow-y: auto;
+
+  @include media-breakpoint-up(sm) {
+    padding: 20px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 25px;
+    height: calc(100% - #{$height-header});
+  }
+
+  .aule-form-container {
+    padding: 20px 20px 20px 20px;
+    margin: 20px;
+    height: auto;
+    @include media-breakpoint-down(lg) {
+      max-width: none;
+    }
+  }
+}
+
+textarea:focus,
+input:focus,
+input[type]:focus,
+.uneditable-input:focus,
+textarea:hover,
+input:hover,
+input[type]:hover,
+.uneditable-input:hover {
+  box-shadow: $box-shadow-dimensions $box-shadow-color;
+  border: 1px solid $border-input-color-focus;
+  color: $color-inverse-01;
+  outline: 0;
+}
+
+select:focus-within,
+select:hover,
+select:active,
+select:focus {
+  cursor: pointer;
+  box-shadow: $box-shadow-dimensions $box-shadow-color !important;
+  border: 1px solid $border-input-color-focus !important;
+  outline: 0 !important;
+  border-radius: 3px !important;
+}
+
+.link-disabled {
+  pointer-events: none;
+}
+
+.aule-file-height {
+  > div {
+    height: 302px;
+    border: 1px solid $gray-500;
+  }
+  button {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid $gray-500;
+  }
+}
+
+.aule-video-height {
+  > div {
+    > div {
+      height: auto;
+      border: 1px solid $gray-500;
+    }
+    margin-bottom: 20px;
+  }
+  button {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid $gray-500;
+  }
+}
+
+.aule-card {
+  width: min-content;
+  background-color: $color-brand-01;
+  border: none;
+  > span {
+    color: white;
+    margin: 8px;
+    white-space: nowrap;
+  }
+}
+
+// input for load file
+.aule-label-upload {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  color: $color-text-03;
+  transition: 0.2s;
+  svg {
+    color: $color-text-03;
+    width: 20px;
+    height: 20px;
+  }
+  &:hover {
+    background-color: #b4bdce;
+    color: black;
+    svg {
+      color: black;
+    }
+  }
+}
+
+#upload-file {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#upload-video {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.aule-file-name {
+  display: flex;
+  margin: 10px auto 10px auto;
+  width: min-content;
+  background-color: $token-background-color;
+  border-radius: 8px;
+  padding: 4px 0 4px 0;
+  span {
+    color: $color-brand-02;
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+  > button {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    > svg {
+      color: $color-brand-02;
+      width: 15px;
+      height: 15px;
+      margin-bottom: 3px;
+    }
+  }
+  &:active,
+  &:focus {
+    background-color: $color-brand-02;
+    span {
+      color: $token-background-color;
+    }
+    > button {
+      outline: none;
+      > svg {
+        color: $token-background-color;
+      }
+    }
+  }
+}
+
+.aule-video-fixed-container {
+  height: auto;
+  position: relative;
+}
+.aule-video-fixed {
+  position: sticky;
+  top: 5%;
+}
+
+.aule-video-subtitle {
+  textarea {
+    border: 1px solid $gray-500;
+    border-radius: 5px;
+    width: 100%;
+    height: 200px;
+  }
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+label.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.fix-double-input {
+  .rbt-input-hint {
+    border-color: transparent !important;
+  }
+}
+
+.image-gallery {
+  width: 100% !important;
+  margin: auto;
+}
+
+.image-gallery-icon {
+  border: none !important;
+}
+
+.fullscreen .image-gallery-slide img {
+  max-height: 100vh;
+}
+
+.thumbnail-delete-button {
+  position: relative;
+
+  button.delete {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding-bottom: 20px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    filter: drop-shadow(0 2px 2px #1a1a1a);
+    &:hover {
+      transform: scale(1.1);
+      svg {
+        color: #337ab7;
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: $color-inverse-01;
+}
+
+.form-control {
+  color: $color-inverse-01;
+  font-size: inherit;
+  caret-color: $color-inverse-01;
+
+  &::placeholder {
+    color: $gray-600 !important;
+    font-style: italic;
+  }
+  &:disabled,
+  &[readonly] {
+    background-color: $color-ui-01;
+  }
+}
+
+.form-group {
+  input,
+  textarea {
+    border: 1px solid $gray-500;
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid $color-brand-01;
+    }
+  }
+}
+
+.line-between {
+  margin: 0;
+  border-top: 1px solid $gray-500;
+}
+
+.upload-file-container {
+  border: 1px solid $gray-500;
+  span.message {
+    color: $gray-600 !important;
+    font-style: italic;
+  }
+  span.loading {
+    font-style: italic;
+  }
+}
+
+.btn-outline-light {
+  border: 1px solid $gray-500 !important;
+  color: $gray-500 !important;
+  transition: 0.2s;
+  svg {
+    transition: 0.2s;
+    color: $gray-500 !important;
+  }
+  &:hover {
+    color: $gray-800 !important;
+    svg {
+      color: $gray-800 !important;
+    }
+    border: 1px solid $gray-800 !important;
+    background-color: transparent !important;
+  }
+  &:focus,
+  &:active {
+    color: $gray-500;
+    border: 1px solid $gray-500;
+    background-color: transparent;
+  }
+}
+
+.btn-primary {
+  color: $gray-900;
+  svg {
+    transition: 0.2s;
+    color: $gray-900;
+    margin: 0;
+  }
+  &:hover {
+    color: $white;
+    svg {
+      color: $white;
+    }
+  }
+  &:focus,
+  &:active {
+    color: $white;
+    svg {
+      color: $white;
+    }
+  }
+}
+
+div.rbt {
+  .rbt-input-multi {
+    border: 1px solid $gray-500;
+  }
+  > input {
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid $color-brand-01 !important;
+    }
+  }
+}
+
+.span-loading {
+  color: $color-brand-02 !important;
+}
+
+.form-control:disabled,
+.form-control[readonly],
+.rbt-input-multi.form-control[disabled] {
+  background-color: transparent !important;
+}
+
+.swal2-popup {
+  background-color: white !important;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.swal2-title,
+.swal2-html-container {
+  color: $gray-600;
+}
+
+.swal2-cancel {
+  background-color: transparent !important;
+  border: 2px solid $gray-500 !important;
+  color: $gray-500 !important;
+  transition: 0.2s;
+  &:hover {
+    border: 2px solid black !important;
+    background: transparent !important;
+    color: black !important;
+  }
+}
+
+.swal2-confirm {
+  background-color: $color-brand-01 !important;
+  border: 1px solid $color-brand-01 !important;
+}
+
+.swal2-icon {
+  border-color: $color-brand-01 !important;
+  color: $color-brand-01 !important;
+}

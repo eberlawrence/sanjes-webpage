@@ -1,0 +1,265 @@
+// Variables
+@import "./template/variables";
+@import "./template/bootstrap/variables";
+
+// Mixins
+@import "./template/mixins";
+@import "./template/bootstrap/mixins";
+
+// Bootsrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+// Hide IE's native "clear" button
+.rbt .rbt-input-main::-ms-clear {
+  display: none;
+}
+
+.rbt {
+  &:focus-within,
+  &:hover,
+  &:focus,
+  &:active {
+    .rbt-input-multi {
+      border: 1px solid $color-brand-01 !important;
+      box-shadow: $box-shadow-dimensions $box-shadow-color !important;
+      border-radius: 3px;
+    }
+  }
+}
+
+/**
+ * Menu
+ */
+.rbt-menu {
+  margin-bottom: 50px !important;
+
+  & > .dropdown-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:focus + &:hover {
+      outline: none;
+    }
+  }
+
+  &-pagination-option {
+    text-align: center;
+  }
+}
+
+/**
+ * Multi-select Input
+ */
+$background-color-disabled: #e9ecef;
+
+$border-color-focus-invalid: #dc3545;
+$border-color-focus-valid: #28a745;
+
+$box-shadow-color-invalid: rgba(220, 53, 69, 0.25);
+$box-shadow-color-valid: rgba(40, 167, 69, 0.25);
+
+$color-focus: #495057;
+$placeholder-color: #6c757d;
+
+.rbt-input-multi:hover {
+  border: 1px solid $border-input-color-focus;
+  box-shadow: $box-shadow-dimensions $box-shadow-color;
+  color: $color-focus;
+  outline: 0;
+}
+
+.rbt-input-multi {
+  cursor: text;
+  overflow: hidden;
+  position: relative;
+
+  // Apply Bootstrap focus styles
+  &.focus + &.hover {
+    color: $color-focus;
+    outline: 0;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: $box-shadow-dimensions $box-shadow-color;
+    border: 1px solid $color-brand-01;
+  }
+
+  &.form-control {
+    height: auto;
+  }
+
+  // BS4 uses the :disabled pseudo-class, which doesn't work with non-inputs.
+  &.form-control[disabled] {
+    background-color: $background-color-disabled;
+    opacity: 1;
+  }
+
+  &.is-invalid.focus {
+    border-color: $border-color-focus-invalid;
+    box-shadow: $box-shadow-dimensions $box-shadow-color-invalid;
+  }
+
+  &.is-valid.focus {
+    border-color: $border-color-focus-valid;
+    box-shadow: $box-shadow-dimensions $box-shadow-color-valid;
+  }
+
+  // Apply Bootstrap placeholder styles
+  input {
+    // Firefox
+    &::-moz-placeholder {
+      color: $placeholder-color;
+      opacity: 1;
+    }
+
+    // Internet Explorer 10+
+    &:-ms-input-placeholder {
+      color: $placeholder-color;
+    }
+
+    // Safari and Chrome
+    &::-webkit-input-placeholder {
+      color: $placeholder-color;
+    }
+  }
+
+  .rbt-input-wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -4px;
+    margin-top: -1px;
+    overflow: hidden;
+
+    input {
+      margin: 1px 0 4px;
+      border: none !important;
+    }
+  }
+
+  .rbt-input-main {
+    margin: 1px 0 4px;
+    &::placeholder {
+      color: $gray-600 !important;
+      font-style: italic;
+    }
+  }
+}
+
+/**
+ * Close Button
+ */
+.rbt-close {
+  z-index: 1;
+
+  &-lg {
+    font-size: 24px;
+  }
+}
+
+.rbt-token {
+  background-color: $token-background-color;
+  border: 0;
+  border-radius: 0.25rem;
+  color: $color-brand-02;
+  display: inline-block;
+  line-height: 1em;
+  margin: 1px 3px 2px 0;
+  padding: 4px 7px;
+  position: relative;
+
+  &-disabled {
+    background-color: $token-disabled-background-color;
+    color: $token-disabled-color;
+    pointer-events: none;
+  }
+
+  &-removeable {
+    cursor: pointer;
+    padding-right: 21px;
+  }
+
+  &-active {
+    background-color: $color-brand-02;
+    color: $token-active-color;
+    outline: none;
+    text-decoration: none;
+  }
+
+  & &-remove-button {
+    bottom: 0;
+    color: inherit;
+    font-size: inherit;
+    font-weight: normal;
+    opacity: 1;
+    outline: none;
+    padding: 3px 7px;
+    position: absolute;
+    right: 0;
+    text-shadow: none;
+    top: -2px;
+  }
+}
+
+/**
+ * Loader + CloseButton container
+ */
+.rbt-aux {
+  align-items: center;
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  pointer-events: none; /* Don't block clicks on the input */
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 34px;
+
+  &-lg {
+    width: 46px;
+  }
+
+  & .rbt-close {
+    margin-top: -4px;
+    pointer-events: auto; /* Override pointer-events: none; above */
+  }
+}
+
+.has-aux .rbt-input {
+  padding-right: 34px;
+}
+
+// Default highlight style
+.rbt-highlight-text {
+  background-color: inherit;
+  color: inherit;
+  font-weight: bold;
+  padding: 0;
+}
+
+/**
+ * Input Groups
+ */
+.input-group > .rbt {
+  flex: 1;
+
+  // Form-controls within input-groups have a higher z-index.
+  & .rbt-input-hint,
+  & .rbt-aux {
+    z-index: 5;
+  }
+
+  &:not(:first-child) .form-control {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:not(:last-child) .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

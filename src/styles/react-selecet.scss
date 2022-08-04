@@ -1,0 +1,65 @@
+// Variables
+@import "./template/variables";
+@import "./template/bootstrap/variables";
+
+// Mixins
+@import "./template/mixins";
+@import "./template/bootstrap/mixins";
+
+// Bootsrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+.react-select {
+  &__control {
+    background-color: transparent !important;
+    border-color: $gray-500 !important;
+
+    &:hover {
+      border: 1px solid $color-brand-01 !important;
+      box-shadow: 0 0 0 0.2rem rgba($color-brand-03, 0.25) !important;
+    }
+
+    &--is-focused {
+      border: 1px solid $color-brand-01 !important;
+      box-shadow: 0 0 0 0.2rem rgba($color-brand-03, 0.25) !important;
+    }
+  }
+  &__placeholder {
+    color: $gray-600 !important;
+  }
+  &__single-value {
+    color: black !important;
+  }
+  &__menu {
+    z-index: 9999 !important;
+  }
+}
+
+// .react-select {
+//   &__control {
+//     background-color: $gray-900 !important;
+//     border-color: $gray-800 !important;
+
+//     &:hover {
+//       border: 1px solid $color-brand-01 !important;
+//       box-shadow: 0 0 0 0.2rem rgba($color-brand-03, 0.25) !important;
+//     }
+
+//     &--is-focused {
+//       border: 1px solid $color-brand-01 !important;
+//       box-shadow: 0 0 0 0.2rem rgba($color-brand-03, 0.25) !important;
+//     }
+//   }
+//   &__placeholder {
+//     color: $gray-600 !important;
+//   }
+//   &__single-value {
+//     color: white !important;
+//   }
+//   &__menu-list {
+//     background-color: #293958;
+//     color: $gray-600;
+//   }
+// }
